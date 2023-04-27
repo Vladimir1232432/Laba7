@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ревин</title>
+    <meta charset="utf-8">
+</head>
+<body id="body">
+   
+    <script>
+        document.write("Описание фитнес-браслета.");
+        document.write("<br>");
+
+        class Braslet {
+            constructor(pamiat, platforma, datchiki) {
+                this.pamiatt = pamiat;
+                this.platformaa = platforma;
+                this.datchikii = datchiki;
+            }
+            get pamiat() {
+                return this.pamiatt;
+            }
+            set pamiat(pamiat1) {
+                this.pamiatt = pamiat1;
+            }
+            get platforma() {
+                return this.platformaa;
+            }
+            set platforma(platforma1) {
+                this.pamiatt = platforma1;
+            }
+            get datchiki() {
+                return this.datchikii;
+            }
+            set datchiki(datchiki1) {
+                this.datchikii = datchiki1;
+            }
+        }
+
+        class DATA extends Braslet {
+            constructor(pamiat, platforma, datchiki, DD, MM, YYYY, stoim) {
+                super(pamiat, platforma, datchiki);
+                this.DDz = DD;
+                this.MMz = MM;
+                this.YYYYz = YYYY;
+                this.stoimm = stoim;
+            }
+            get DD() {
+                return this.DDz;
+            }
+            set DD(DD1) {
+                this.DDz = DD1;
+            }
+            get MM() {
+                return this.MMz;
+            }
+            set MM(MM1) {
+                this.MMz = MM1;
+            }
+            get YYYY() {
+                return this.YYYYz;
+            }
+            set YYYY(YYYY1) {
+                this.YYYYz = YYYY1;
+            }
+            get stoim() {
+                return this.stoimm;
+            }
+            set stoim(stoim1) {
+                this.stoimm = stoim1;
+            }
+        }
+
+       function Info() {
+            document.write("Память: " + Apple.pamiat + " ГБ.");
+            document.write("<br>");
+            document.write("Платформа: " + Apple.platforma);
+            document.write("<br>");
+            document.write("Датчики: " + Apple.datchiki);
+            document.write("<br>");
+            document.write("Дата: " + aboba.DD + "." + aboba.MM + "." + aboba.YYYY);
+            document.write("<br>");
+            document.write("Стоимость: " + aboba.stoim + " Рублей.");
+        }
+       function tabl() {
+         
+        var table = document.createElement('table');
+        var tbody = document.createElement('tbody');
+
+        table.style.border = '1px solid black';
+           table.style.height = '70px';
+           table.style.width = '';
+        table.appendChild(tbody);
+
+        document.getElementById('body').appendChild(table);
+
+        var cell = document.createElement('tr');
+        var odin = document.createElement('td');
+        var dva = document.createElement('td');
+        var tri = document.createElement('td');
+        var chetire = document.createElement('td');
+        var piat = document.createElement('td');
+
+        odin.id = "1";
+          odin.style.border = '1px solid black';
+
+        dva.id = "2";
+          dva.style.border = '1px solid black';
+
+        tri.id = "3";
+          tri.style.border = '1px solid black';
+
+        chetire.id = "4";
+           chetire.style.border = '1px solid black';
+
+        piat.id = "5";
+           piat.style.border = '1px solid black';
+
+
+        cell.appendChild(odin);
+        cell.appendChild(dva);
+        cell.appendChild(tri);
+        cell.appendChild(chetire);
+        cell.appendChild(piat);
+        tbody.appendChild(cell);
+
+        document.getElementById("1").innerHTML = "Память: " + Apple.pamiat + " ГБ.";
+        document.getElementById("2").innerHTML = "Платформа:" + Apple.platforma;
+        document.getElementById("3").innerHTML = "Датчики: " + Apple.datchiki;
+        document.getElementById("4").innerHTML = "Дата: " + aboba.DD + "." + aboba.MM + "." + aboba.YYYY;
+        document.getElementById("5").innerHTML = "Стоимость: " + aboba.stoim + " Рублей.";  
+        }
+
+        var Apple = new Braslet(6, "IOS.", "Термометры.");
+        var aboba = new DATA(6, "IOS.", "Термометры", 20, 04, 2023, 1000000);
+
+        Info();
+        tabl();
+    </script>
+</body>
+</html>
